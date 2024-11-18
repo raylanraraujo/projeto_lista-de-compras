@@ -117,3 +117,43 @@ ul {
     font-size: 0.75rem;
     line-height: 20px;
 }
+
+.checkbox-input{
+    display: none;
+}
+
+/*personalizando o checkbox quando não está selecionado*/
+.checkbox-customizado { 
+    width: 20px;
+    height: 20px;
+    background-color: var(--neutro);
+    border: 1px solid var(--preto);
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+/*personalizando o checkbox quando está selecionado*/
+.checked{
+    background-color: var(--preto);
+    position: relative;
+}
+
+.checked::after {
+    content: "";
+    position: absolute;
+    left: 30%;
+    top: -10%;
+    width: 5px;
+    height: 14px;
+
+    border-top: 2px solid var(--neutro);
+    border-left: 2px solid var(--neutro);
+    transform: rotate(-140deg);
+}
+
+.botao-acao{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
