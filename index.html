@@ -16,30 +16,29 @@
     <main>
         <img src="img/bag.png" alt="Sacola de compras">
         <form action="">
-            <input type="text" name="" id="" placeholder="Digite o item que deseja adicionar">
-            <button>Salvar item</button>
+            <input type="text" name="" id="input-item" placeholder="Digite o item que deseja adicionar">
+            <button id="adicionar-botao">Salvar item</button>
         </form>
         
-        <h2>Lista de compras</h2>
-        <hr>
-
         <ul>
+            <h2>Lista de compras</h2>
+            <hr /> <!--teve que ser feito o fechamento com a barra-->
             <li>
-                <div>
-                    <div>
+                <div class="item-lista-container">
+                    <div class="container-nome-compra">
                         <input type="checkbox" name="" id="">
                         <p>Ração de gato</p>
                     </div>
-                        <div>
-                            <button>
-                                <img src="img/delete.svg" alt="deletar" srcset="">
-                            </button>
-                            <button>
-                                <img src="img/edit.svg" alt="editar" srcset="">
-                            </button>
-                        </div>
+                    <div>
+                        <button>
+                            <img src="img/delete.svg" alt="deletar" srcset="">
+                        </button>
+                        <button>
+                            <img src="img/edit.svg" alt="editar" srcset="">
+                        </button>
+                    </div>
                 </div>
-                <p>Segunda-feira (18/11/2024 às 07:00)</p>
+                <p class="item-lista-texto">Segunda-feira (18/11/2024 às 07:00)</p>
             </li>
         </ul>
     </main>
