@@ -118,42 +118,36 @@ ul {
     line-height: 20px;
 }
 
-.checkbox-input{
+/* Estilo do checkbox padrão */
+.input-checkbox {
     display: none;
 }
 
-/*personalizando o checkbox quando não está selecionado*/
-.checkbox-customizado { 
+/* Estilo do checkbox personalizado */
+.checkbox-customizado {
     width: 20px;
     height: 20px;
-    background-color: var(--neutro);
-    border: 1px solid var(--preto);
-    cursor: pointer;
-    border-radius: 4px;
-    margin-right: 8px;
+    background-color: white; /* Cor de fundo padrão */
+    border: 1px black; /* Borda */
+    cursor: pointer; /* Cursor ao passar por cima */
+    border-radius: 4px; /* Cantos arredondados */
 }
 
-/*personalizando o checkbox quando está selecionado*/
-.checked{
-    background-color: var(--preto);
-    position: relative;
+/* Estilo do checkbox personalizado quando marcado */
+.checked {
+    background-color: #9353FF; /* Cor de fundo quando marcado */
+    position: relative; /* Posição relativa para o ícone de check */
 }
 
-.checked::after {
-    content: "";
-    position: absolute;
-    left: 30%;
-    top: -10%;
-    width: 5px;
-    height: 14px;
-
+/* Estilo do ícone de check */
+.checkbox-customizado.checked::after {
+    content: ""; /* Adiciona um conteúdo vazio */
+    position: absolute; /* Posicionamento absoluto em relação ao checkbox */
+    left: 30%; /* Ajuste de posição horizontal */
+    width: 5px; /* Largura do ícone */
+    height: 14px; /* Altura do ícone */
+    /* Estilo da linha do ícone */
     border-top: 2px solid var(--neutro);
     border-left: 2px solid var(--neutro);
-    transform: rotate(-140deg);
-}
-
-.botao-acao{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+    transform: rotate(-140deg); /* Rotação para formar o ícone de check */
 }
