@@ -2,6 +2,7 @@ const item = document.getElementById("input-item");
 const botaoSalvarItem = document.getElementById("adicionar-item");
 const listaDeCompras = document.getElementById("lista-de-compras");
 botaoSalvarItem.addEventListener("click", adicionarItem);
+let contador = 0; // inicializando o contador
 
 function adicionarItem(evento) {
     evento.preventDefault()
@@ -12,11 +13,29 @@ function adicionarItem(evento) {
 
                 const containerNomeDoItem = document.createElement("div");
 
-                    //criar a div do container checkbox aqui
+                    const containerCheckbox = document.createElement("div");
+                    containerCheckbox.classList.add("container-checkbox");
+
+                    const checkboxInput = document.createElement("input");
+                    checkboxInput.classList.add("input-checkbox");
+                    checkboxInput.id = "checkbox-" + contador++;
+
+                    const checkboxLabel = document.createElement("label");
+                    checkboxLabel.setAttribute("for", checkboxInput.id);
+
+                    const checkboxCustomizado = document.createElement("div");
+                    checkboxCustomizado.classList.add("checkbox-customizado");
+
+                    checkboxLabel.appendChild(checkboxInput);
+                    checkboxLabel.appendChild(checkboxCustomizado);
+
+                    containerCheckbox.appendChild(checkboxLabel);
+                    containerNomeDoItem.appendChild(containerCheckbox);
 
                     const nomeDoItem = document.createElement("p");
                     nomeDoItem.innerText = item.value;
                     containerNomeDoItem.appendChild(nomeDoItem);
+                    
                 containerItemLista.appendChild(containerNomeDoItem);
                 
                 const containerBotoes = document.createElement("div");
@@ -27,9 +46,15 @@ function adicionarItem(evento) {
                         imagemRemover.alt = "remover";
                         botaoRemover.appendChild(imagemRemover);
                     containerBotoes.appendChild(botaoRemover);
+                
+                    const botaoEditar = document.createElement("button");
+                    botaoEditar.classList.add("item-lista-button");
+                        const imagemEditar = document.createElement("img");
+                        imagemEditar.src = "./img/edit.svg";
+                        imagemEditar.alt = "editar";
+                        botaoEditar.appendChild(imagemEditar);
+                    containerBotoes.appendChild(botaoEditar);
                 containerItemLista.appendChild(containerBotoes);
-
-                    // criar o botao editar aqui
 
         itemDaLista.appendChild(containerItemLista);
     listaDeCompras.appendChild(itemDaLista);
