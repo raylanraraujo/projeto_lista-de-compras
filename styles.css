@@ -108,6 +108,11 @@ form {
 
 ul {
     list-style-type: none;
+    margin-bottom: 40px;
+}
+
+li {
+    margin-bottom: 16px;
 }
 
 .input-checkbox {
@@ -155,3 +160,4 @@ ul {
 .container-lista {
     width: 100%;
 }
+

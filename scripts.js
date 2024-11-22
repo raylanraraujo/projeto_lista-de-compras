@@ -1,6 +1,7 @@
 const item = document.getElementById("input-item");
 const botaoSalvarItem = document.getElementById("adicionar-item");
 const listaDeCompras = document.getElementById("lista-de-compras");
+const listaComprados = document.getElementById("lista-comprados");
 botaoSalvarItem.addEventListener("click", adicionarItem);
 let contador = 0; // inicializando o contador
 
@@ -27,12 +28,17 @@ function adicionarItem(evento) {
                     checkboxLabel.addEventListener("click", function (evento) {  //criada uma FUNÇÃO ANÔNIMA;
                         const checkboxInput = evento.currentTarget.querySelector (".input-checkbox");
                         const checkboxCustomizado = evento.currentTarget.querySelector(".checkbox-customizado");
+                        const itemTitulo = evento.currentTarget.closest("li").querySelector("#item-titulo");
                 
                         //para saber se o checboxinput está selecionado
                         if ( checkboxInput.checked) {
                             checkboxCustomizado.classList.add("checked");
+                            itemTitulo.style.textDecoration = "line-through";
+                            listaComprados.appendChild(itemDaLista);
                         } else {
                             checkboxCustomizado.classList.remove("checked");
+                            itemTitulo.style.textDecoration = "none";
+                            listaDeCompras.appendChild(itemDaLista);
                         }
                     })
 
@@ -45,6 +51,7 @@ function adicionarItem(evento) {
                     containerNomeDoItem.appendChild(containerCheckbox);
 
                     const nomeDoItem = document.createElement("p");
+                    nomeDoItem.id = "item-titulo";
                     nomeDoItem.innerText = item.value;
                     containerNomeDoItem.appendChild(nomeDoItem);
                     
