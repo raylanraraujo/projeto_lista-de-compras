@@ -17,18 +17,30 @@ function adicionarItem(evento) {
                     containerCheckbox.classList.add("container-checkbox");
 
                     const checkboxInput = document.createElement("input");
+                    checkboxInput.type = "checkbox";
                     checkboxInput.classList.add("input-checkbox");
                     checkboxInput.id = "checkbox-" + contador++;
 
                     const checkboxLabel = document.createElement("label");
                     checkboxLabel.setAttribute("for", checkboxInput.id);
 
+                    checkboxLabel.addEventListener("click", function (evento) {  //criada uma FUNÇÃO ANÔNIMA;
+                        const checkboxInput = evento.currentTarget.querySelector (".input-checkbox");
+                        const checkboxCustomizado = evento.currentTarget.querySelector(".checkbox-customizado");
+                
+                        //para saber se o checboxinput está selecionado
+                        if ( checkboxInput.checked) {
+                            checkboxCustomizado.classList.add("checked");
+                        } else {
+                            checkboxCustomizado.classList.remove("checked");
+                        }
+                    })
+
                     const checkboxCustomizado = document.createElement("div");
                     checkboxCustomizado.classList.add("checkbox-customizado");
 
                     checkboxLabel.appendChild(checkboxInput);
                     checkboxLabel.appendChild(checkboxCustomizado);
-
                     containerCheckbox.appendChild(checkboxLabel);
                     containerNomeDoItem.appendChild(containerCheckbox);
 
