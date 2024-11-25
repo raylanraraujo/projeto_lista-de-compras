@@ -15,4 +15,5 @@ const excluirItem = (elemento) => {
     }
 }
 
-export { excluirItem };
+export { excluirItem }; 
+//método para exportar recomendada quando se tem mais de uma funcionalidade dentro do arquivo
