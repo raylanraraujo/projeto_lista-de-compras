@@ -1,3 +1,6 @@
+import { adicionarData } from "./adicionarData.js";
+
+
 //exportação direta quando se tem apenas uma funcionalidade dentro do arquivo
 export const editarItem = (elemento) => {
     const novoItem = prompt('Digite o nome do novo item');
@@ -14,5 +17,9 @@ export const editarItem = (elemento) => {
             elemento.querySelector("checkbox-customizado").classList.add("checked");
             itemTextoAtualizado.style.textDecoration = "line-trought";
         }
+
+        //gera nova data ao execultar o processo de edição
+        const dataGerada = elemento.querySelector(".texto-data");
+        dataGerada.textContent = adicionarData();
     }
 }
